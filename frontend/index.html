@@ -188,7 +188,7 @@
       </form>
 
       <div class="signup-link">
-        Don’t have an account? <a href="/frontend/register.html">Sign up</a>
+        Don’t have an account? <a href="/register.html">Sign up</a>
       </div>
     </div>
   </div>
@@ -226,7 +226,7 @@
 
           localStorage.setItem('token', data.token);
           showPopup('Login successful! Redirecting...');
-          setTimeout(() => window.location.href = '/frontend/todolist.html', 1200);
+          setTimeout(() => window.location.href = '/todolist.html', 1200);
         } catch (error) {
           showPopup('Server error. Try again later.', true);
         }
