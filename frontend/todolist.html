@@ -359,7 +359,7 @@
       if (!token) return null;
 
       try {
-        const response = await fetch('http://localhost:5000/api/todos', {
+        const response = await fetch(`${window.location.origin}/api/todos`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -383,7 +383,7 @@
       if (!token) return false;
 
       try {
-        const response = await fetch(`http://localhost:5000/api/todos/${taskId}`, {
+        const response = await fetch(`${window.location.origin}/api/todos/${taskId}`, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json',
@@ -404,7 +404,7 @@
       if (!token) return false;
 
       try {
-        const response = await fetch(`http://localhost:5000/api/todos/${taskId}`, {
+        const response = await fetch(`${window.location.origin}/api/todos/${taskId}`, {
           method: 'DELETE',
           headers: {
             'Authorization': `Bearer ${token}`
@@ -423,7 +423,7 @@
       if (!token) return;
 
       try {
-        const response = await fetch('http://localhost:5000/api/todos', {
+        const response = await fetch(`${window.location.origin}/api/todos`, {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${token}`
@@ -519,7 +519,7 @@
 
       if (token) {
         try {
-          const response = await fetch('http://localhost:5000/api/auth/user', {
+          const response = await fetch(`${window.location.origin}/api/auth/user`, {
             method: 'GET',
             headers: {
               'Authorization': `Bearer ${token}`,
@@ -569,7 +569,7 @@
 
       try {
         console.log('Verifying token with server...');
-        const response = await fetch('http://localhost:5000/api/auth/user', {
+        const response = await fetch(`${window.location.origin}/api/auth/user`, {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${token}`,
