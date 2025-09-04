@@ -14,6 +14,19 @@ app.use(express.json());
 // Serve frontend static files at root path
 app.use(express.static(path.join(__dirname, 'frontend')));
 
+// Explicit routes for frontend HTML pages
+app.get('/todolist.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'frontend', 'todolist.html'));
+});
+
+app.get('/register.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'frontend', 'register.html'));
+});
+
+app.get('/login.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'frontend', 'index.html'));
+});
+
 // For any other routes, serve index.html (for SPA support)
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'frontend', 'index.html'));
