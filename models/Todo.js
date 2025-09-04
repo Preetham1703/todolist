@@ -1,0 +1,31 @@
+const mongoose = require('mongoose');
+
+const todoSchema = new mongoose.Schema({
+  userId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+    required: true
+  },
+  text: {
+    type: String,
+    required: true
+  },
+  time: {
+    type: Date,
+    required: true
+  },
+  done: {
+    type: Boolean,
+    default: false
+  },
+  missed: {
+    type: Boolean,
+    default: false
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now
+  }
+});
+
+module.exports = mongoose.model('Todo', todoSchema);
